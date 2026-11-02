@@ -1,132 +1,124 @@
 # HR Analytics – Employee Attrition Analysis
 
-## Project Overview
+## 1. Project Overview
 
-This project analyzes employee attrition patterns using the IBM HR Analytics Employee Attrition & Performance dataset.
+This project analyzes employee attrition using the IBM HR Analytics Employee Attrition & Performance dataset.
 
-The main objective is to understand employee attrition through several factors, including department, age group, job role, and overtime status. The analysis uses Microsoft Excel for data inspection and cleaning, PostgreSQL for SQL analysis, and Power BI for data visualization.
+The analysis focuses on understanding employee attrition patterns across departments, age groups, job roles, and overtime status. The results can help identify areas that may need further HR evaluation and support employee retention strategies.
 
-The results are presented in an interactive dashboard, supported by key insights and recommendations for further investigation.
+The dataset is synthetic and created for analysis and learning purposes. It does not represent actual IBM employee records.
 
-## Business Objectives
+## 2. Project Objectives
 
-- Identify the overall number of employees and employee attrition rate.
-- Analyze employee attrition across different departments.
-- Understand attrition patterns based on employee age groups.
-- Identify job roles with higher employee attrition.
-- Examine the distribution of attrition based on overtime status.
-- Provide insights and recommendations to support further HR analysis.
+- Understand the overall employee attrition rate.
+- Analyze attrition across departments and age groups.
+- Identify job roles with a high number of employees leaving.
+- Explore attrition patterns based on overtime status.
+- Provide data-driven recommendations for further HR evaluation.
 
-## Dataset
+## 3. Tools & Technologies
 
-**Dataset Name:** IBM HR Analytics Employee Attrition & Performance
+- Microsoft Excel
+- PostgreSQL
+- Power BI
+- GitHub
 
-**Source:** [Kaggle – IBM HR Analytics Employee Attrition & Performance](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset)
+## 4. Dataset
 
-**Dataset Overview:**
-- Total Records: 1,470 employees
-- Total Columns: 35
-- Data Type: Structured employee data
-- Main Attributes: Age, Attrition, Department, Job Role, Monthly Income, Job Satisfaction, Overtime, and Years at Company.
+The dataset used in this project is **IBM HR Analytics Employee Attrition & Performance**.
 
-**Note:** This dataset contains synthetic data and does not represent actual employees or a real company's internal HR records.
+- Source: [Kaggle – IBM HR Analytics Employee Attrition & Performance](https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset)
+- Total records: 1,470 employees
+- Total columns: 35
+- Target variable: `Attrition`
 
-## Tools & Technologies
+The `Attrition` column indicates whether an employee left the company:
 
-- **Microsoft Excel** – Data inspection and data cleaning.
-- **PostgreSQL** – Data storage, validation, and SQL analysis.
-- **Power BI** – Data visualization and interactive dashboard.
-- **GitHub** – Project documentation and version control.
+- `Yes`: Employee left
+- `No`: Employee stayed
 
-## Project Workflow
+## 5. Project Workflow
 
-### 1. Data Inspection & Cleaning – Microsoft Excel
+### 1. Excel Analysis
 
-- Inspected the dataset structure and column information.
-- Reviewed data consistency and data quality.
-- Prepared the dataset for database import and analysis.
+- Explore the dataset structure and column definitions.
+- Review data types and data quality.
+- Understand employee attributes related to attrition.
+- Prepare the data for further analysis.
 
-### 2. SQL Analysis – PostgreSQL
+### 2. SQL Analysis
 
-- Imported the prepared dataset into PostgreSQL.
-- Performed basic data validation.
-- Calculated total employees, active employees, employee attrition, and attrition rate.
-- Analyzed attrition by department, age group, job role, and overtime status.
-- Used aggregate functions, filtering, grouping, and conditional calculations.
+- Analyze total employees and employee attrition.
+- Compare attrition across departments.
+- Analyze attrition by age group and job role.
+- Explore attrition based on overtime status.
 
-### 3. Dashboard Development – Power BI
+### 3. Power BI Dashboard
 
-- Connected PostgreSQL data to Power BI.
-- Created DAX measures for employee KPIs and attrition rate.
-- Created an age group calculated column.
-- Developed visualizations to analyze employee attrition patterns.
-- Added interactive filters to support data exploration.
+- Create KPI cards to summarize employee attrition.
+- Visualize attrition across departments, age groups, and job roles.
+- Compare attrition by overtime status.
+- Present the findings in an interactive dashboard.
 
-### 4. Insights & Recommendations
+## 6. Dashboard Preview
 
-Reviewed the analysis results and developed insights and recommendations based on the observed attrition patterns.
+![HR Analytics Dashboard](images/dashboard-preview.png)
 
-## Key Insights
+## 7. Key Business Insights
 
-1. **Overall Employee Attrition**
+1. **Overall Attrition**  
+   The dataset contains 1,470 employees. A total of 237 employees left the company, while 1,233 employees remained. The overall attrition rate is 16.12%.
 
-   The dataset contains 1,470 employees, consisting of 1,233 employees who did not leave and 237 employees who experienced attrition. The overall attrition rate is **16.12%**.
+2. **Attrition by Department**  
+   Research & Development recorded the highest number of employees leaving, with 133 employees out of 961. Sales recorded 92 employees leaving out of 446, while Human Resources recorded 12 out of 63 employees. The number of employees leaving should be considered alongside department size.
 
-2. **Attrition by Department**
+3. **Attrition by Age Group**  
+   The 26–35 age group recorded the highest number of employees leaving, with 116 employees. This was followed by the 18–25 age group with 44 employees and the 36–45 age group with 43 employees.
 
-   Research & Development has the highest number of employees who left, with 133 employees out of 961. However, Sales has the highest attrition rate at approximately **20.63%**, compared with 19.05% in Human Resources and 13.84% in Research & Development.
+4. **Attrition by Job Role**  
+   Laboratory Technician recorded 62 employees leaving out of 259 employees. Sales Executive had the largest total workforce, with 326 employees, and 57 employees leaving. This shows that attrition counts differ across job roles.
 
-3. **Attrition by Age Group**
+5. **Attrition and Overtime**  
+   Among the 237 employees who left, 127 employees (53.59%) had overtime, while 110 employees (46.41%) did not have overtime. These figures describe the composition of employees who left and do not, by themselves, prove that overtime causes attrition.
 
-   The 26–35 age group has the highest number of employees who left, with 116 employees.
+## 8. Recommendations
 
-4. **Attrition by Job Role**
+- Conduct further analysis of factors such as overtime, job satisfaction, environment satisfaction, age, and other employee attributes.
+- Review attrition patterns in the Research & Development department, which recorded the highest number of employees leaving.
+- Investigate attrition among Laboratory Technicians by considering job level, job satisfaction, distance from home, and monthly income.
+- Use additional analysis to identify potential retention opportunities. The findings should be treated as descriptive patterns rather than proof of causation.
 
-   Laboratory Technician has the highest number of employees who left, with 62 out of 259 employees, representing an attrition rate of approximately **23.94%**.
-
-5. **Attrition by Overtime**
-
-   Of the 237 employees who left, 127 (53.59%) had overtime status, while 110 (46.41%) did not. These percentages represent the distribution of employees who left, not the attrition rate within each overtime group.
-
-## Recommendations
-
-- Further investigate factors associated with employee attrition, including job satisfaction, environment satisfaction, overtime, age, and other employee characteristics.
-- Evaluate the Sales department because it has the highest attrition rate among the departments.
-- Investigate the Laboratory Technician job role to better understand factors associated with its relatively high attrition.
-- Review overtime policies and compare attrition rates between employees with and without overtime.
-- Use the findings as a starting point for further HR analysis and employee retention strategies.
-
-## Project Structure
+## 9. Repository Structure
 
 ```text
 hr-analytics-employee-attrition/
 │
-├── README.md
 ├── excel/
-│   └── HR_Analytics_Cleaning.xlsx
+│   └── 01_HR_Analytics_Excel_Analysis.xlsx
+│
 ├── sql/
-│   └── HR_Analytics_Analysis.sql
+│   └── 02_HR_Analytics_SQL_Analysis.sql
+│
 ├── power-bi/
-│   └── HR_Analytics_Dashboard.pbix
-└── images/
-    └── HR_Analytics_Dashboard.png
+│   └── 03_HR_Analytics_Dashboard.pbix
+│
+├── images/
+│   └── dashboard-preview.png
+│
+└── README.md
 ```
 
-## Dashboard Preview
+## 10. Skills Demonstrated
 
-![HR Analytics Dashboard](images/HR_Analytics_Dashboard.png)
+- Data exploration
+- HR analytics
+- Data analysis using Excel
+- SQL querying with PostgreSQL
+- Data visualization using Power BI
+- Business insight development
+- Data-driven recommendations
+- GitHub project documentation
 
-The dashboard provides an overview of employee attrition through KPI cards, department analysis, age group analysis, job role analysis, and overtime analysis.
+## 11. Author
 
-## Limitations
-
-- The dataset is synthetic and does not represent real company employee records.
-- The analysis identifies patterns and associations, not direct causes of employee attrition.
-- Further investigation is required before making actual HR policy decisions.
-
-## Author
-
-**Workscell**
-
-GitHub: [https://github.com/workscell](https://github.com/workscell)
-
+**Data Analyst Portfolio Project**
